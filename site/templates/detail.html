@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+
+<h2>{{ article.title }}</h2>
+
+<div  class = "alert alert-info">
+    <div class="info">
+        <div> {{ article.text }} </div>
+    </div>
+    <br>
+    <a onclick="return confirm('Вы уверены?')" href="/all/{{ article.id }}/delete" class="bottom1">Delete</a>
+    <a href="/all/{{ article.id }}/edit" class="bottom1">Edit</a>
+  </div>
+{% endblock %}

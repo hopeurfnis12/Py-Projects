@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+New
+{% endblock %}
+
+{% block body %}
+<div style="margin: 20px 0;">
+        <form method = "post">
+            <input type = "text" name = "title" id = "title" class="form-control" placeholder="Title" autocomplete="off"><br>
+            <textarea name = "text" id = "text" class = "form-control1" placeholder="Text"></textarea><br>
+            <input type = "submit" name = "btn btn-success" class="bottom" value = "Create"><br>
+        </form>
+</div>
+{% endblock %}
+
+

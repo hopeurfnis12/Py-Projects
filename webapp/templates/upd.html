@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang = "ru">
+
+    <head>
+      <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+      <title>
+            UPD Notebook
+      </title>
+    </head>
+
+    <body>
+
+    <div class="tonal">
+    <a onclick="return confirm('Вы уверены?')" href="/"> Home </a>
+    <a onclick="return confirm('Вы уверены?')" href="/create_test"> Create </a>
+    <a onclick="return confirm('Вы уверены?')" href="/posts"> Notebooks </a>
+    </div>
+    <p></p>
+    <h2> Обновление записи </h2>
+    <p></p>
+    <h3>
+        <form method = "post">
+            <input type = "text" name = "title" id = "title" class="form-control" value = "{{ article.title }}" placeholder="Введите название теста" autocomplete="off"><br>
+            <textarea name = "text" id = "text" class = "form-control1" placeholder="Введите вопрос">{{ article.text }}</textarea><br>
+            <input type = "submit" name = "btn btn-success" class="bottom" value = "Обновить"><br>
+        </form>
+    </h3>
+    </body>
+</html>

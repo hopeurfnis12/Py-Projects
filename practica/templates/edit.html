@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактирование
+{% endblock %}
+
+{% block body %}
+<div class="edit">
+        <form method = "post">
+            <input type = "text" name = "title" id = "title" class="form-control" value = "{{ article.title }}" placeholder="Заголовок" autocomplete="off"><br>
+            <textarea name = "text" id = "text" class = "form-control1" placeholder="Текст">{{ article.text }}</textarea><br>
+            <input type = "submit" name = "btn btn-success" class="bottom" value = "Обновить"><br>
+        </form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Notebooks
+{% endblock %}
+
+{% block body %}
+<h2> Все записи </h2>
+  <p></p>
+<h3>
+  {% if articles|length > 0 %}
+  {% for el in articles %}
+  <div class = "info">
+    <p1 style="color: #C8C8C8; text-shadow: 0px 0px 10px black; font-size: 12px;"> {{ el.date.date() }} </p1>
+    <div class="txt" style="margin-top: 5px;"> {{ el.title }} </div>
+    <div class="txt" style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; ">{{ el.text }}</div>
+  </div>
+  <a href="/posts/{{ el.id }}" class="detail">Посмотреть</a>
+
+  <p></p>
+  {% endfor %}
+  {% else %}
+  <div class="txt">Нет записей</div>
+  {% endif %}
+</h3>
+{% endblock %}

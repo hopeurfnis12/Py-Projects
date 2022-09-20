@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All
+{% endblock %}
+
+{% block body %}
+
+  {% if articles|length > 0 %}
+
+  {% for el in articles %}
+
+  <div class = "allover">
+    <div class = "info">
+      <p1 style="float: right; color: #C8C8C8; font-size: 12px;"> {{ el.date.date() }} </p1>
+      <div class="txt" style="margin-top: 5px;"> {{ el.title }} </div>
+      <div class="txt" style="margin-top: 5px; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; ">{{ el.text }}</div>
+    </div>
+    <div style="height: 80px; border-style: none solid none none;">
+      <a href="/all/{{ el.id }}" class="detail"> Detail </a>
+    </div>
+  </div>
+  {% endfor %}
+
+  {% else %}
+  <div style="margin: 20px 20px;" class="txt">Nothing</div>
+  {% endif %}
+
+{% endblock %}
