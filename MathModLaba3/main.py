@@ -2,20 +2,17 @@ import scipy as sc
 import matplotlib.pyplot as plt
 import numpy as np
 
-m = int(input('Введите m: '))
+m = 4
 a = np.random.randint(0, 10, size=(m, m))
-aT = sc.linalg.inv(a)
+A = sc.linalg.inv(a)
 b = np.ones(m)
 print('A = \n', a, sep = '')
 print('\nОпределитель = ', sc.linalg.det(a), sep = '')
-print('\nA^(T)*y = b \n', sc.linalg.solve(aT, b), sep = '')
-
+print('\nA^(-1)* b \n', np.dot(A, b), sep = '')
+print('\nA*y = b \n', sc.linalg.solve(a, b), sep = '')
 plt.matshow(a)
-plt.colorbar()
 plt.title('Матрица')
-
 plt.matshow(a)
-plt.colorbar()
 plt.title('Обратная матрица')
 
 plt.show()
