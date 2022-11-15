@@ -5,13 +5,13 @@ import scipy.optimize as optimize
 
 def res(p, N, t):
     a, b = p
-    err = N - a * np.exp(b * t)
+    err = a * np.exp(b * t)
     return err
 
 
 n = 10    #int(input('Введеите n: '))
 t = np.linspace(0., 1., n, endpoint = False)
-N = 110 + t * 10 + 5 
+N = t + np.cos(2 * t)
 N0 = N + 0.1 * np.random.randn(len(t))
 
 plt.plot(t, N, '-', label='exact')
