@@ -77,10 +77,23 @@ def task2():
 
 
 def task3():
+    x0 = a0
+    M = 1.01 * diff(x0)
+    x1 = x0 - F(x0)/M
+    while np.abs(x1 - x0) >= 0.01:
+        x0 = x1
+        x1 = x0 - F(x0)/M
+    print('F(x)', F(x1))
+    print('x =', x1)
+    #M = 1.01 * diff(x0)
+    #q = 
+    while True:
+
+        break
     return 0
 
 
-v = '0'
+v = 'a'
 match v:
     case '0':
         a0 = 0
@@ -95,4 +108,4 @@ match v:
         a0 = 1
         b0 = 2
 
-task2()
+task3()
