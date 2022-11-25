@@ -85,15 +85,9 @@ def task3():
         x1 = x0 - F(x0)/M
     print('F(x)', F(x1))
     print('x =', x1)
-    #M = 1.01 * diff(x0)
-    #q = 
-    while True:
+    
 
-        break
-    return 0
-
-
-v = 'a'
+v = 'c'
 match v:
     case '0':
         a0 = 0
