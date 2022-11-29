@@ -103,3 +103,7 @@ match v:
         b0 = 2
 
 task3()
+
+
+# sin(y) + 2 * x = 2
+# cos(x − 1) + y = 0.7
