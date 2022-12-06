@@ -14,7 +14,8 @@ a2 = 0.5    # rabbit hunted rate
 a3 = 2      # foxes death rate
 a4 = 0.2    # foxes birth rate
 h = 0.1
-t = np.arange(0, 1, h)
+b = 30
+t = np.arange(0, b, h)
 v0 = []
 w0 = []
 
@@ -35,7 +36,7 @@ def fun(t, z):
     v, w = z
     return [(a1 - a2 * w) * v, (-a3 + a4 * v) * w]
 
-sol = solve_ivp(fun, [0, 30], [1, 1], dense_output=True)
+sol = solve_ivp(fun, [0, b], [1, 1], dense_output=True)
 z = sol.sol(t)
 
 plt.plot(t, v0, 'r-', label = 'v')
