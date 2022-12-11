@@ -14,12 +14,12 @@ def diff_y(k):
 def diff_yy(k): return (ys[k+1] - (2 * ys[k]) + ys[k-1])/(h * h)
 
 def task1_1():
-    y.append(ys[0] - 0.5 * diff_y(0))
+    y.append(ys[0])
     b.append(2)
     for i in range(1, 3):
-        y.append(diff_yy(i) - x[i] * diff_y(i) + 2 * ys[i])
-        b.append(x[i] + 1)
-    y.append(ys[3])
+        y.append(diff_yy(i) + 2 * diff_y(i) - ys[i]/x[i])
+        b.append(3)
+    y.append(0.5 * ys[3] - ys[3])
     b.append(1)
     for i in range(4):
         print(i+1, ': ', y[i], " = ", b[i], sep='')
@@ -29,9 +29,9 @@ def progon_u(a, b, c, u): return -c / (a*u + b)
 def progon_v(a, b, d, u, v): return (d - a*v) / (a*u + b)
 
 def task1_2(d):
-    a = [0, 105, 105.5, 0]
-    b = [6, -198, -198, 1]
-    c = [-5, 95, 94.5, 0]
+    a = [0, 90, 90, 0]
+    b = [1, -203.333, -202.5, -0.5]
+    c = [0, 110, 110, 0]
     u.append(-c[0]/b[0])
     v.append(d[0]/b[0])
     for i in range(1, 4):
@@ -59,7 +59,7 @@ def task1_3():
 
 eps = 10 ** -3
 h = 0.1
-x = [0.9, 1.0, 1.1, 1.2]
+x = [0.2, 0.3, 0.4, 0.5]
 y = []
 b = []
 u = []

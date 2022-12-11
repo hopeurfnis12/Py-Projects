@@ -34,19 +34,21 @@ h = 0.1
 b = 30
 t = np.arange(0, b, h)
 
-v1, w1 = solve([1,1], 1.5, 0.5, 2, 0.2)
-v2, w2 = solve([1,1], 1, 1, 1, 0.5)
-v3, w3 = solve([2,2], 1.5, 0.5, 2, 0.2)
+v1, w1 = solve([1,1], 1, 0.5, 2, 0.2)
+v2, w2 = solve([1,10], 1, 0.5, 2, 0.2)
+v3, w3 = solve([1,20], 1, 0.5, 2, 0.2)
 
+plt.subplot(311)
 plt.plot(t, v1, 'r-', label = 'v1')
 plt.plot(t, w1, 'c-', label = 'w1')
 
+plt.subplot(312)
 plt.plot(t, v2, 'b--', label = 'v2')
 plt.plot(t, w2, 'k--', label = 'w2')
 
+plt.subplot(313)
 plt.plot(t, v3, 'y:', label = 'v3')
 plt.plot(t, w3, 'g:', label = 'w3')
-
 
 plt.legend(loc = 0)
 plt.grid(True)
