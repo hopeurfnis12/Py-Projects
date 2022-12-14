@@ -48,14 +48,21 @@ def task1_3():
         y0.append(u[i] * y0[2 - i] + v[i])
     print('\nx | y')
     for i in range(4):
-        print(x[i], '|', y0[i])
-    plt.plot(x, y0, 'r-')
-    plt.plot(x, y0, 'b.')
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.grid()
-    plt.show()
+        print(x[i], '|', y0[3 - i])
+    print()
+    for i in range(4):    
+        print('y', i+1, ': ', solve_y(y[i], y0[3], y0[2], y0[1], y0[0]), sep='')
+    # plt.plot(x, y0, 'r-')
+    # plt.plot(x, y0, 'b.')
+    # plt.xlabel('x')
+    # plt.ylabel('y')
+    # plt.grid()
+    # plt.show()
 
+
+def solve_y(y, x0, x1, x2, x3):
+    # print(y)
+    return float(sympify(y).subs([(ys[0], x0), (ys[1], x1), (ys[2], x2), (ys[3], x3)]))
 
 eps = 10 ** -3
 h = 0.1
